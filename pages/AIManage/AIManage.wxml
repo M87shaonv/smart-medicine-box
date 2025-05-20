@@ -1,0 +1,49 @@
+<!--导航栏-->
+<view class="custom-navigation">
+  <view class="nav-title">
+    <text>智能药箱-首页</text>
+  </view>
+</view>
+
+<view class="container">
+  <scroll-view 
+    class="history-section" 
+    scroll-y 
+    scroll-top="{{scrollTop}}"
+    scroll-with-animation
+    enhanced
+    show-scrollbar
+  >
+    <block wx:for="{{history}}" wx:key="index">
+      <view class="message {{item.role}}">
+        <text class="message-content">{{item.content}}</text>
+      </view>
+    </block>
+    <view wx:if="{{isStreaming}}" class="typing-indicator">
+      正在思考中<text class="dot">.</text><text class="dot">.</text><text class="dot">.</text>
+    </view>
+  </scroll-view>
+
+  <view class="input-section">
+  <textarea 
+    class="input-box" 
+    placeholder="输入药品相关问题..." 
+    value="{{inputText}}"
+    bindinput="onInput"
+    disabled="{{isStreaming}}"
+    confirm-type="send"
+    bindconfirm="sendRequest"
+  />
+  <view class="buttons-container">
+    <button class="send-btn" bindtap="showVoicePicker">设置</button>
+    <button 
+      class="send-btn" 
+      bindtap="sendRequest"
+      disabled="{{isStreaming}}"
+      hover-class="none"
+    >
+      {{isStreaming ? '生成中...' : '发送'}}
+    </button>
+  </view>
+</view>
+</view>

@@ -1,0 +1,162 @@
+// pages/profile/profile.wxss
+@import '../../variables.scss';
+
+.section-title {
+    font-size: 18px;
+    color: #279eff;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+    display: flex;
+    justify-content: space-between;
+  }
+/* 个人信息样式 */
+.profile-container {
+    background-color: #4FADF8;
+    display: flex;
+    padding-bottom: 10rpx;
+    
+    .avatar-nickname {
+        display: flex;
+        align-items: center;
+      }
+    .avatar-wrapper{
+        appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        width: 140rpx;
+        padding-left: 10rpx;
+    }
+    .avatar {
+        background-color: #ffffff;
+        border-radius: 50%;
+        width: 100rpx;
+        height: 100rpx;;
+        box-shadow: 
+        0 5rpx 5rpx rgba(0, 0, 0, 0.1), /* 下方阴影 */
+        0 -5rpx 5rpx rgba(0, 0, 0, 0.1), /* 上方阴影 */
+        -5rpx 0 5rpx rgba(0, 0, 0, 0.1), /* 左侧阴影 */
+        5rpx 0 5rpx rgba(0, 0, 0, 0.1); /* 右侧阴影 */
+      }
+    .nickname {
+        font-size: $primary-font-size;
+        color: #e6e6e6;
+        font-weight: bold;
+      }
+  }
+/* 我的设备样式 */
+.devices-list {
+    .device-item {
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      padding: 10rpx 0;
+      border-bottom: 1px solid #d3d3d3;
+      .device-name {
+        font-weight: bold;
+        color: $primary-blue;
+        font-size: $primary-font-size;
+        margin-right: 10rpx;
+      }
+      .device-id {
+        color: #666;
+        font-size: 12px;
+        padding-right: 0rpx;
+      }
+      .device-info {
+        display: flex;
+        flex-direction: column; /* 垂直排列 */
+        align-items: flex-start; /* 水平起始对齐 */
+        justify-content: flex-start; /* 垂直起始对齐 */
+        overflow: hidden; /* 处理溢出 */
+        width: 200rpx; /* 设置固定宽度 */
+      }
+      .device-battery {
+        color: #666;
+        font-size: 12px;
+        padding-right: 0rpx;
+        text-overflow: ellipsis; /* 溢出时显示省略号 */
+        overflow: hidden; /* 处理溢出 */
+        white-space: nowrap; /* 防止换行 */
+      }
+      .primary-buttom {
+        width: 20%;
+        padding: 3rpx 0rpx;
+        background-color: $primary-blue;
+        color: rgb(255, 243, 243);
+        border-radius: 10rpx;
+        font-size: $primary-font-size;
+        display: inline-block;
+        margin: 0;
+        margin-left: 30rpx;
+      }
+    }    
+}
+/* 亲友共享样式 */
+  .friends-list {
+    .friend-item {
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        padding: 10rpx 0;
+        border-bottom: 1px solid #d3d3d3;
+
+      .friend-name {
+        font-weight: bold;
+        color: $primary-blue;
+        padding-right:175rpx;
+      }
+
+      .primary-buttom {
+        width: 20%;
+        padding: 3rpx 0rpx;
+        background-color: $primary-blue;
+        color: rgb(255, 243, 243);
+        border-radius: 10rpx;
+        font-size: $primary-font-size;
+        display: inline-block;
+        margin: 0;
+        margin-left: 30rpx;
+      }
+    }
+  }
+
+/* 提醒方式选择样式 */
+.reminder-item {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between; /* 水平对齐 */
+    padding: 10rpx 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+.reminder-item text {
+    font-size: 14px;
+    color: $primary-blue;
+    font-weight: bold;
+}
+/* 历史记录样式 */
+  .history-list {
+    .history-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10rpx 0;
+      border-bottom: 1rpx solid #f0f0f0;
+
+      .history-drug {
+        font-weight: bold;
+        color: $primary-blue;
+      }
+
+      .history-time {
+        color: #666;
+        font-size: $small-font-size;
+      }
+
+      .history-status {
+        font-size: $small-font-size;
+      }
+    }
+  }

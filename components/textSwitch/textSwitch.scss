@@ -1,0 +1,61 @@
+.mp-switch .wx-switch-input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: var(--mp-switch-width);
+    height: var(--mp-switch-height);
+    border: 1px solid #DFDFDF;
+    outline: 0;
+    border-radius: calc(var(--mp-switch-height) / 2);
+    box-sizing: border-box;
+    background-color: #e5e5e5;
+    transition: background-color 0.1s, border 0.1s;
+}
+
+.mp-switch .wx-switch-input::before {
+    content: var(--mp-switch-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--mp-switch-width) - 2px);
+    height: calc(var(--mp-switch-height) - 2px);
+    line-height: calc(var(--mp-switch-height) - 2px);
+    font-size: calc(var(--mp-switch-height) / 2.2);
+    padding-left: calc(var(--mp-switch-height));
+    padding-right: 6px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #999;
+    text-align: center;
+    background-color: transparent;
+}
+
+.mp-switch .wx-switch-input::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--mp-switch-height) - 2px);
+    height: calc(var(--mp-switch-height) - 2px);
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.mp-switch .wx-switch-input.wx-switch-input-checked {
+    border-color: #47a9f8;
+    background-color: #4FADF8;
+}
+
+.mp-switch .wx-switch-input.wx-switch-input-checked::before {
+    color: #fff;
+    padding-right: calc(var(--mp-switch-height));
+    padding-left: 6px;
+}
+
+.mp-switch .wx-switch-input.wx-switch-input-checked::after {
+    -webkit-transform: translateX(calc(var(--mp-switch-width) - var(--mp-switch-height)));
+    transform: translateX(calc(var(--mp-switch-width) - var(--mp-switch-height)));
+}

@@ -1,0 +1,91 @@
+<!-- pages/profile/profile.wxml -->
+<!-- 导航栏 -->
+<view class="custom-navigation">
+  <view class="nav-title">
+    <text>智能药箱-个人信息</text>
+  </view>
+</view>
+
+<!-- 个人信息 -->
+<view class="profile-container">
+  <view class="avatar-nickname">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="avatar" src="{{avatarUrl}}" mode="aspectFill" ></image>
+    </button>
+    <input class="nickname" type="nickname" value="{{nickname}}" bindinput="onNicknameInput" maxlength="12" />
+  </view>
+</view>
+
+<!-- 我的设备 -->
+<view class="modules-container">
+    <view class="section-title" bindtap="navigateToDevicePage">    
+        <text>我的设备</text>
+        <text>></text>
+    </view>
+  <view class="devices-list">
+    <block wx:for="{{devices}}" wx:key="index">
+      <view class="device-item">
+        <text class="device-name">{{item.name.length > 8 ? item.name.substring(0, 8) + '...' : item.name}}</text>
+       <view class="device-info">
+        <text class="device-battery">药品重量:{{item.weight}}</text>
+        <text class="device-battery">剩余电量:{{item.battery}}</text>
+       </view>
+        <button class="primary-buttom" bindtap="setDevice">设置</button>
+        <button class="primary-buttom" bindtap="unbindDevice" data-deviceid="{{item.deviceId}}" >解绑</button>
+      </view>
+    </block>
+  </view>
+  
+</view>
+
+<!-- 亲友共享 -->
+<view class="modules-container">
+  <view class="section-title">
+    <text>亲友共享</text>
+    <text>></text>
+  </view>
+  <view class="friends-list">
+    <block wx:for="{{sharedFriends}}" wx:key="index">
+      <view class="friend-item">
+        <text class="friend-name">{{item.name}}</text>
+        <button class="primary-buttom" bindtap="setPrimary">设置</button>
+        <button class="primary-buttom" bindtap="removeFriend">移除</button>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 提醒方式选择 -->
+<view class="modules-container">
+  <view class="section-title">提醒方式选择</view>
+  <view class="reminder-item">
+    <text>声音提醒</text>
+    <mp-switch class="reminder-switch" checked="{{soundReminder}}" trueText="开" falseText="关" width="60" height="30" bindchange="toggleSoundReminder"/>
+  </view>
+  <view class="reminder-item">
+    <text>震动提醒</text>
+    <mp-switch class="reminder-switch" checked="{{vibrationReminder}}" trueText="开" falseText="关" width="60" height="30" bindchange="toggleVibrationReminder"/>
+  </view>
+  <view class="reminder-item">
+    <text>消息推送</text>
+    <mp-switch class="reminder-switch" checked="{{notificationReminder}}" trueText="开" falseText="关" width="60" height="30" bindchange="toggleNotificationReminder"/>
+  </view>
+</view>
+
+
+<!-- 历史记录展示 -->
+<view class="modules-container">
+  <view class="section-title">
+    <text>历史记录</text>
+    <text>></text>
+  </view>
+  <view class="history-list">
+    <block wx:for="{{history}}" wx:key="index">
+      <view class="history-item">
+        <text class="history-drug">{{item.drugName}}</text>
+        <text class="history-time">{{item.time}}</text>
+        <text class="history-status" style="color: {{getStatusColor(item.status)}};">{{item.status}}</text>
+      </view>
+    </block>
+  </view>
+</view>

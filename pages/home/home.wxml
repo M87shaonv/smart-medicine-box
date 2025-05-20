@@ -1,0 +1,6 @@
+<!--导航栏-->
+<view class="custom-navigation">
+  <view class="nav-title">
+    <text>智能药箱-首页</text>
+  </view>
+</view>

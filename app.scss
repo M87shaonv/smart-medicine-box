@@ -1,0 +1,55 @@
+@import './variables.scss';
+/**app.wxss**/
+page{
+    height: 100vh;
+    background-color: #e6e6e6;
+}
+
+/* 自定义导航栏样式 */
+.custom-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rpx;
+    padding-top: 80rpx;
+    background-color: $primary-blue;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 5rpx 6rpx rgba(0, 0, 0, 0.1);
+    text{
+        color: rgb(255, 245, 245);
+    }
+
+    .nav-title {
+        flex-grow: 1; /* 使标题部分占据剩余空间 */
+        text-align: center; /* 确保文本居中 */
+        font-size: 18px;
+        font-weight: bold;
+      }
+  }
+/*常用样式*/
+/*模块样式*/
+.modules-container {
+    margin: 30rpx;
+    padding: 40rpx;
+
+    background-color: rgb(255, 245, 245);
+    border-radius: 10rpx;
+    box-shadow: 
+    0 5rpx 5rpx rgba(0, 0, 0, 0.1), /* 下方阴影 */
+    // 0 -5rpx 5rpx rgba(0, 0, 0, 0.1), /* 上方阴影 */
+    -5rpx 0 5rpx rgba(0, 0, 0, 0.1), /* 左侧阴影 */
+    5rpx 0 5rpx rgba(0, 0, 0, 0.1); /* 右侧阴影 */
+}
+/*次级标题*/
+.section-title {
+    font-size: 16px;
+    color: $primary-blue;
+    font-weight: bold;
+  }
+/* 按钮按下时的样式 */
+button:active {
+    background-color: $primary-dark-blue !important ; /* 按下时变灰 */
+    color: #acacac !important ; /* 按下时文字颜色变淡 */
+  }

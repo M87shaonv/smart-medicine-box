@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "mp-switch": "/components/textSwitch/textSwitch"
+      }
+}

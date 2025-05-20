@@ -1,0 +1,41 @@
+<view class="custom-navigation">
+    <view class="back-area" bind:tap="navigateBack">
+        <text>{{"<"}}</text>
+    </view>
+    
+  <view class="nav-title">
+    <text>智能药箱-我的设备</text>
+  </view>
+</view>
+
+<view class="container">
+  <button 
+    type="primary" 
+    bindtap="startDiscovery"
+    loading="{{isSearching}}"
+    disabled="{{isSearching}}"
+  >
+    {{isSearching ? '搜索中...' : '搜索设备'}}
+  </button>
+
+  <view class="devices-list">
+    <block wx:for="{{devices}}" wx:key="deviceId">
+      <view class="device-item" bindtap="connectToDevice" data-device="{{item}}">
+        <view class="device-info">
+          <text class="device-name">{{item.name || '未知设备'}}</text>
+        </view>
+        <view class="device-meta">
+          <text class="device-id">信号: {{item.RSSI || '--'}}dBm</text>
+        </view>
+      </view>
+    </block>
+    
+    <view wx:if="{{devices.length === 0 && isSearching}}" class="empty-tip">
+      <text>正在搜索附近设备...</text>
+    </view>
+    
+    <view wx:if="{{devices.length === 0 && !isSearching}}" class="empty-tip">
+      <text>未发现设备，请点击上方按钮搜索</text>
+    </view>
+  </view>
+</view>

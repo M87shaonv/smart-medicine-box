@@ -1,0 +1,54 @@
+{
+	"entryPagePath":"pages/home/home",
+	"pages": [
+        "pages/home/home",
+        "pages/profiles/profiles",
+        "pages/AIManage/AIManage",
+        "pages/MyDevices/MyDevices"
+    ],
+    "permissions": {
+        "scope.userLocation": {
+          "desc": "需要获取位置权限以搜索蓝牙设备"
+        },
+        "scope.bluetooth": {
+            "desc": "需要蓝牙权限进行设备连接"
+          }
+    },
+	"window": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "智能药箱",
+        "navigationBarBackgroundColor": "#4FADF8",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#efefef",
+        "backgroundTextStyle":"dark"
+    },  
+    "tabBar": {
+        "selectedColor": "#4FADF8",
+        "color": "#494949",
+        "backgroundColor": "#efefef",
+        "borderStyle":"white",
+        "list": [
+            {
+                "text": "首页",
+                "pagePath": "pages/home/home",
+                "iconPath": "assets/greet.png",
+                "selectedIconPath": "assets/on_greet.png"
+            },
+            {
+                "text": "药灵",
+                "pagePath": "pages/AIManage/AIManage",
+                "iconPath": "assets/Intimate_friend.png",
+                "selectedIconPath": "assets/on_Intimate_friend.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/profiles/profiles",
+                "iconPath": "assets/personal_center.png",
+                "selectedIconPath": "assets/on_personal_center.png"
+            }
+        ]
+    },
+	"style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading":"requiredComponents"
+}

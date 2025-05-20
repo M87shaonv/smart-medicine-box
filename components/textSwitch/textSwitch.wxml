@@ -1,0 +1,3 @@
+<view class="mp-switch" style="--mp-switch-width: {{width}}px; --mp-switch-height: {{height}}px; --mp-switch-text: '{{checked ? trueText : falseText}}';">
+    <view class="wx-switch-input {{checked ? 'wx-switch-input-checked' : ''}}" bindtap="onChange"></view>
+</view>
